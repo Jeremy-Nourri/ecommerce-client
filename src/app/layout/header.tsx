@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-[2] p-2 bg-base-100 shadow-md">
@@ -16,9 +18,8 @@ export default function Header() {
   
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 w-52">
-            <li><a>Homepage</a></li>
-            <li><a>Portfolio</a></li>
-            <li><a>About</a></li>
+            <li><Link href="/">Accueil</Link></li>
+            <li><Link href="/category/Savon solide">Savon solide</Link></li>
           </ul>
         </div>
 

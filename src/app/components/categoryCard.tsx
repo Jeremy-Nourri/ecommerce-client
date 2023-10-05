@@ -1,7 +1,7 @@
 import Image from "next/image"
 import CategoryCard from "@/interfaces/categoryCard.interface"
 
-export default function CategoryProductCard({ name, description, image }: CategoryCard) {
+export default function CategoryCard({ name, description, image }: CategoryCard) {
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure className="w-full">

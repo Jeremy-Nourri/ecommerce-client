@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export default interface CategoryCard {
+export default interface CategoryCardInterface {
   name: string;
   image: StaticImageData;
   description: string;

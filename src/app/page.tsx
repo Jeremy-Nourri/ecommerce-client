@@ -2,7 +2,7 @@ import Image from 'next/image'
 import imageIntro from '../../public/images/background-mobile.webp'
 import savonLiquide from '../../public/images/savon-liquide.webp'
 import logo from '../../public/images/logo-madjikarite.webp'
-import ProductCard from './components/categoryCard'
+import CategoryCard from './components/categoryCard'
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
       <h1 className="mt-10 mb-4 text-3xl font-bold text-center">Nos produits</h1>
 
       <div className="px-6">
-        <ProductCard
+        <CategoryCard
           name="Savons liquides"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia."
           image={savonLiquide}
