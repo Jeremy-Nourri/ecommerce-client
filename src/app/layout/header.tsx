@@ -20,6 +20,7 @@ export default function Header() {
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 w-52">
             <li><Link href="/">Accueil</Link></li>
             <li><Link href="/category/Savon solide">Savon solide</Link></li>
+            <li><Link href="/signup">Créer un compte</Link></li>
           </ul>
         </div>
 

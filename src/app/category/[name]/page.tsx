@@ -1,4 +1,4 @@
-import getProductsByCategory from "@/app/libs/api/getProductsByCategory";
+import getProductsByCategory from "@/app/libs/api/get/getProductsByCategory";
 import ProductCard from "@/app/components/productCard";
 
 export default async function Category({ params }: { params: { name: string } }) {
