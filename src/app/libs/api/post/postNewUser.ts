@@ -5,8 +5,12 @@ export default async function postNewUser(newUser: NewUserInterface): Promise<nu
   try {
     const response = await axios.post<number>(
       `http://localhost:4000/signup`,
-      newUser
+      newUser,
+      { withCredentials: true }
+
     );
+
+    response.headers['set-cookie'];
 
     return response.status
 

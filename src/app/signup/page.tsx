@@ -13,7 +13,7 @@ export default function Signup() {
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [statusNumber, setStatusNumber] = useState(0);
   
-  const handleModalClose = () => {
+  const closeModal = () => {
     setShowModal(false);
     setModalType("");
   };
@@ -177,7 +177,7 @@ export default function Signup() {
       </form>
 
       {showModal && (
-        <Modal type={modalType} onClose={handleModalClose} statusNumber={statusNumber} />
+        <Modal type={modalType} onClose={closeModal} statusNumber={statusNumber} />
       )}
 
     </main>
