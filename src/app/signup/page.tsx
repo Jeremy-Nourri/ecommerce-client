@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as yup from 'yup';
 
 import Modal from '../components/ui/modal';
-import postNewUser from '../libs/api/post/postNewUser';
+import postUserSignUp from '../libs/api/post/postUserSignUp';
 
 export default function Signup() {
 
@@ -61,7 +61,7 @@ export default function Signup() {
     }),
     onSubmit: async (values) => {
       setLoadingSubmit(true);
-      const response = await postNewUser(values);
+      const response = await postUserSignUp(values);
       console.log(response);
 
       if (response === 200 || response === 201) {

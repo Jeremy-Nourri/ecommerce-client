@@ -1,12 +1,20 @@
 "use client"
 import { useFormik } from 'formik';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '../libs/redux/hooks';
 import * as yup from 'yup';
 
+import { setIsLoggedIn } from '../libs/redux/features/login/loginSlice'
+import { setUserAccount } from '../libs/redux/features/userAccount/userAccountSlice'
 import Modal from '../components/ui/modal';
 import postLogin from "../libs/api/post/postLogin";
 
 export default function LoginForm() {
+
+  const dispatch = useAppDispatch();
+
+  const router = useRouter();
 
   const [modalType, setModalType] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -32,17 +40,20 @@ export default function LoginForm() {
       const response = await postLogin(values);
       console.log(response);
     
-      if (response === 200 || response === 201) {
+      if (response.status === 200 || response.status === 201) {
         setModalType("success");
-        setStatusNumber(response);
+        setStatusNumber(response.status);
         setLoadingSubmit(false);
         setShowModal(true);
+        dispatch(setIsLoggedIn(true));
+        dispatch(setUserAccount(response.data));
         formik.resetForm();
+        router.push("/userAccount");
       } 
-      if (response >= 400) {
+      if (response.status >= 400) {
         setLoadingSubmit(false);
         setModalType("error");
-        setStatusNumber(response);
+        setStatusNumber(response.status);
         setShowModal(true);
       }
     

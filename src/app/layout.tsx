@@ -1,9 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import Loading from './loading'
+import { ReduxProvider } from './libs/redux/provider'
 
+import Loading from './loading'
 import Header from './layout/header'
+
 import { Noto_Serif, Nunito_Sans } from 'next/font/google'
 
  
@@ -36,7 +38,9 @@ export default function RootLayout({
       <body className={`${nunito.variable} ${noto.variable}`}>
         <Header />
         <Suspense fallback={<Loading />}>
-          {children}
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
         </Suspense>
       </body>
     </html>

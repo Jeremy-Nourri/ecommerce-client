@@ -1,7 +1,7 @@
 import axios from "axios";
-import NewUserInterface from "@/interfaces/newUser.interface";
+import UserSignUpInterface from "@/interfaces/userSignUp.interface";
 
-export default async function postNewUser(newUser: NewUserInterface): Promise<number> {
+export default async function postUserSignUp(newUser: UserSignUpInterface): Promise<number> {
   try {
     const response = await axios.post<number>(
       `http://localhost:4000/signup`,
@@ -9,8 +9,6 @@ export default async function postNewUser(newUser: NewUserInterface): Promise<nu
       { withCredentials: true }
 
     );
-
-    response.headers['set-cookie'];
 
     return response.status
 
